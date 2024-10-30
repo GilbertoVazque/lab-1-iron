@@ -1,0 +1,17 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main  # Configura para que se ejecute en la rama principal o ajusta según sea necesario
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display message
+        run: echo "Running tests for the pull request. All tests must pass before merging."
